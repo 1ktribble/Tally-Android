@@ -1,0 +1,52 @@
+<resources>
+    <!--App Name and Activities-->
+    <string name="app_name">Tally</string>
+    <string name="title_activity_enter_zip">Enter Zip</string>
+
+    <!--Standard Text Views-->
+    <string name="upcoming_events">Upcoming Events</string>
+
+    <!--Bottom Navigation Items-->
+    <string name="home_bottom_nav">Home</string>
+    <string name="calendar_bottom_nav">Events</string>
+    <string name="notifications_bottom_nav">Alerts</string>
+    <string name="feed_bottom_nav">Feed</string>
+    <string name="explore_bottom_nav">Explore</string>
+
+    <!--Utility Bar Items-->
+    <string name="account_utility_bar">Account</string>
+    <string name="account_calendar">Calendar</string>
+
+    <!--Event Type Items-->
+    <string name="default_event_type">Default Event</string>
+    <string name="city_event_type">City Election</string>
+    <string name="county_event_type">County Election</string>
+    <string name="school_board_event_type">School Board Election</string>
+    <string name="state_event_type">State Election</string>
+    <string name="proposal_event_type">Proposals</string>
+    <string name="town_hall_event_type">Town Halls</string>
+    <string name="misc_event_type">Miscellaneous</string>
+
+    <!--Event Items -->
+    <string name="default_event_name">Default</string>
+    <string name="sample_description_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="share_button_name">Share</string>
+    <string name="go_vote_button_name">Go Vote</string>
+
+    <!--Get Zip Code Activity-->
+    <string name="enter_county_zip">Enter County or Zip</string>
+    <string name="use_current_location">Use Current Location</string>
+    <string name="back_button_desc">Take User to Main Activity with Saved Zip</string>
+    <string name="speech_button_desc">Start Speech to Text</string>
+    <string name="location_button_desc">Get User\'s Current Location</string>
+    <string name="zip_code_error">Please enter 5-digit Zip Code</string>
+
+    <!--Politician Information-->
+    <string name="bill_history_button_text">Bill History</string>
+    <string name="politician_details">Default Po.</string>
+    <string name="follow_politician">Follow</string>
+    <string name="politician_image">Politician Image View</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

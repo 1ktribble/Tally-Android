@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- "Settings" should not be -->
+    <item
+        android:id="@+id/settings_toolbar"
+        android:icon="@drawable/ic_account_box_white_24px"
+        android:title="@string/account_utility_bar"
+        app:showAsAction="ifRoom|collapseActionView"
+        />
+
+
+</menu>
