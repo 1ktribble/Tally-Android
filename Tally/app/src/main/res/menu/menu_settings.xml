@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="org.tallythevote.ProfileActivity">
+
+    <item
+        android:id="@+id/profile_settings"
+        android:orderInCategory="2"
+        android:title="@string/settings_menu_profile"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/basic_settings"
+        android:orderInCategory="3"
+        android:title="@string/settings_menu_basic"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/advanced_settings"
+        android:orderInCategory="4"
+        android:title="@string/settings_menu_advanced"
+        app:showAsAction="ifRoom"
+        />
+</menu>
