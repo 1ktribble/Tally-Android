@@ -6,7 +6,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wordpress.kaitribble.unnamedvotingapplication.MainActivity"
+    tools:context="org.tallythevote.MainActivity"
     style="@style/AppTheme"
     android:background="@color/md_blue_50">
 
@@ -21,7 +21,26 @@
         style="@style/menuBars"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        tools:ignore="UnusedAttribute"/>
+        tools:ignore="RtlHardcoded,UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/md_white_1000"
+                android:text="@string/app_name"
+                android:textSize="30sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/title_activity_enter_zip"
+            android:textSize="20sp"
+            android:layout_gravity="right"
+            android:id="@+id/zipCodeText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"/>
+    </android.support.v7.widget.Toolbar>
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"
@@ -29,18 +48,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:elevation="4dp"
-        style="@style/menuBars"
         app:itemIconTint="@drawable/bottom_nav_selector"
         app:itemTextColor="@drawable/bottom_nav_selector"
         android:theme="@style/menuBars"
-
         app:menu="@menu/bottom_navigation_drawer"
         app:layout_scrollFlags="scroll|enterAlways|snap"
         tools:targetApi="lollipop"
-        android:clipChildren="false"/>
+        android:clipChildren="false">
 
-    <!--Source for image button https://www.youtube.com/watch?v=mTv3JxdVb9o-->
-
+    </android.support.design.widget.BottomNavigationView>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -53,16 +69,18 @@
         android:layout_above="@+id/bottom_navigation_menu"
         android:layout_alignRight="@+id/bottom_navigation_menu"
         android:layout_alignEnd="@+id/bottom_navigation_menu"
-        android:layout_margin="15dp"/>
+        android:layout_margin="15dp"
+        tools:ignore="RtlHardcoded"/>
 
     <FrameLayout
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation_menu"
+        android:layout_below="@+id/mainToolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/mainToolbar">
+        android:layout_above="@+id/bottom_navigation_menu"
+        tools:ignore="RtlHardcoded">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/eventList"
@@ -70,6 +88,17 @@
             android:layout_height="match_parent"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:text="@string/section_coming_soon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tempTextView"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:layout_gravity="center_vertical|center"
+            android:textSize="36sp"
             android:visibility="gone"/>
     </FrameLayout>
 

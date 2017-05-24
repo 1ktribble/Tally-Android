@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/cardView"
     app:cardCornerRadius="4dp"
-    app:contentPadding="5dp"
+    app:cardUseCompatPadding="true"
     app:cardElevation="5dp"
     android:layout_marginTop="2dip"
     android:layout_marginBottom="2dip"
@@ -21,12 +21,12 @@
             android:text="@string/go_vote_button_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/calendarButton"
+            android:id="@+id/goButton"
             android:layout_below="@+id/eventDescriptionText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:textColor="@color/md_amber_700"/>
+            android:textColor="@color/md_red_700"/>
 
         <TextView
             android:text="@string/default_event_name"
@@ -39,17 +39,55 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_toLeftOf="@+id/dateView"
+            android:layout_toStartOf="@+id/dateView"/>
 
         <View
             android:id="@+id/horizontalLine"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:background="@color/md_grey_800"
+            android:background="@color/md_red_700"
             android:layout_alignBottom="@+id/eventName"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
+
+        <Button
+            android:text="@string/share_button_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shareButton"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:textColor="@color/md_red_700"
+            android:layout_below="@+id/eventDescriptionText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:text="@string/default_event_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateView"
+            android:padding="5dp"
+            android:background="@color/md_red_700"
+            android:textColor="@color/md_white_1000"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity=""
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:text="@string/default_event_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/horizontalLine"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/addressLinkTextView"
+            android:layout_alignParentStart="true"
+            android:textAlignment="textEnd"
+            android:background="@color/md_white_1000"
+            android:padding="10dp"/>
 
         <TextView
             android:text="@string/sample_description_text"
@@ -59,20 +97,8 @@
             android:textSize="18sp"
             android:padding="15dp"
             android:background="@color/cardview_light_background"
-            android:layout_below="@+id/horizontalLine"
-            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/addressLinkTextView"
             android:layout_alignParentStart="true"/>
-
-        <Button
-            android:text="@string/share_button_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/shareButton"
-            android:layout_below="@+id/eventDescriptionText"
-            android:layout_toRightOf="@+id/calendarButton"
-            android:layout_toEndOf="@+id/calendarButton"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:textColor="@color/md_amber_700"/>
 
     </RelativeLayout>
 

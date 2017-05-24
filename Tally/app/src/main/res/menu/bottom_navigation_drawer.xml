@@ -18,14 +18,6 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/alerts_bottom_nav"
-        android:enabled="true"
-        android:title="@string/notifications_bottom_nav"
-        android:icon="@drawable/ic_notifications_white_24dp"
-        app:showAsAction="ifRoom"
-        />
-
-    <item
         android:id="@+id/feed_bottom_nav"
         android:enabled="true"
         android:title="@string/feed_bottom_nav"
