@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/authui_inputTextColor"
+    android:layout_marginLeft="57dp"
+    android:layout_marginRight="57dp"
+    android:gravity="center_vertical|center_horizontal"
+    android:elevation="7dp"
+    android:backgroundTint="@color/authui_inputTextColor"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/signUpLayout">
+
+    <TextView
+        android:text="Welcome to Tally!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpTextView"
+        android:textAppearance="@android:style/TextAppearance.Material.Title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/text_margin"
+        android:alpha="1"
+        android:textStyle="normal|bold"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/signUpAddressEditText"
+        android:layout_below="@+id/signUpTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/text_margin"
+        android:hint="Email Address"
+        android:alpha="1"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/signUpPasswordEditText"
+        android:layout_below="@+id/signUpAddressEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/text_margin"
+        android:hint="Password"
+        android:alpha="1"
+        android:fontFamily="sans-serif"/>
+
+    <Button
+        android:text="Sign Up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpButton"
+        android:layout_below="@+id/signUpPasswordEditText"
+        android:layout_marginBottom="@dimen/auth_method_button_marginBottom"
+        android:padding="@dimen/tw__login_btn_drawable_padding"
+        android:background="@color/md_light_green_A700"
+        android:alpha="1.0"
+        android:layout_alignEnd="@+id/signUpPasswordEditText"
+        android:layout_alignStart="@+id/signUpPasswordEditText"
+        android:onClick="onClick"/>
+
+    <TextView
+        android:text="Already a member? Sign In"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signInLink"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginBottom="@dimen/text_margin"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/signUpButton"
+        android:layout_alignParentEnd="false"
+        android:textSize="12sp"
+        android:textStyle="normal|bold"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

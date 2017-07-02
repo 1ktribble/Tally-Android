@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="org.tallythevote.SettingsFragment"
+              android:background="@color/md_grey_400">
+
+    <TextView
+        android:text="General"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsTitle"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:background="@color/md_grey_400"
+        android:textColor="@color/md_grey_800"
+        android:paddingStart="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:text="Account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsAccount"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="5dp"
+        android:background="@color/md_grey_50"
+        android:layout_marginBottom="1dp"
+        android:textColor="@color/authui_inputTextColorDark"/>
+
+    <TextView
+        android:text="Notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsNotifications"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="5dp"
+        android:background="@color/md_grey_50"
+        android:layout_marginBottom="1dp"
+        android:textColor="@color/authui_inputTextColorDark"/>
+
+    <TextView
+        android:text="Privacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsPrivacy"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="5dp"
+        android:background="@color/md_grey_50"
+        android:layout_marginBottom="1dp"
+        android:textColor="@color/authui_inputTextColorDark"/>
+
+</LinearLayout>

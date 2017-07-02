@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "625739627043",
+    "firebase_url": "https://tally-dae06.firebaseio.com",
+    "project_id": "tally-dae06",
+    "storage_bucket": "tally-dae06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625739627043:android:117dbe3106e424e2",
+        "android_client_info": {
+          "package_name": "org.tallythevote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625739627043-btff4kdnk86roq8q9vmm7kf627frv4lo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tallythevote",
+            "certificate_hash": "65355ac14c51262ab5010a09945a9ba77ee1f208"
+          }
+        },
+        {
+          "client_id": "625739627043-rvoo8j3am052hgvotkrfj3besaud6pep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVRF4YApWMUQRCCJ2dtdF8Ygpm9BglzlI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625739627043-rvoo8j3am052hgvotkrfj3besaud6pep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

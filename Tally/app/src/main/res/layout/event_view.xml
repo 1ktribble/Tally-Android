@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/eventName"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:padding="15dp"
             android:background="@color/cardview_light_background"
             android:layout_alignParentTop="true"
@@ -87,14 +87,15 @@
             android:layout_alignParentStart="true"
             android:textAlignment="textEnd"
             android:background="@color/md_white_1000"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textSize="14dp"/>
 
         <TextView
             android:text="@string/sample_description_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/eventDescriptionText"
-            android:textSize="18sp"
+            android:textSize="18dp"
             android:padding="15dp"
             android:background="@color/cardview_light_background"
             android:layout_below="@+id/addressLinkTextView"

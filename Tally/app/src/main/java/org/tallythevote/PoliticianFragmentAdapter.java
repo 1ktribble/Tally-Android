@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -21,6 +21,7 @@ import java.util.List;
 public class PoliticianFragmentAdapter extends RecyclerView.Adapter<PoliticianFragmentAdapter.MyViewHolder> {
 
     List<Politician> politicianList;
+
 
     public PoliticianFragmentAdapter(List<Politician> data){
         this.politicianList = data;
@@ -47,9 +48,7 @@ public class PoliticianFragmentAdapter extends RecyclerView.Adapter<PoliticianFr
         holder.getCurrentPoliticianRole().setText(politicianList.get(position).getPoliticianPosition());
         holder.getCurrentPoliticianImage().setImageResource(politicianList.get(position).getPoliticianImage());
 
-        if(politicianList.get(position).getPoliticianRegion() == "County")
-            holder.billHistory.setText("More Info");
-        holder.billHistory.setOnClickListener(new View.OnClickListener() {
+        holder.politicianCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), PoliticianActivity.class);
@@ -67,29 +66,17 @@ public class PoliticianFragmentAdapter extends RecyclerView.Adapter<PoliticianFr
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        private Button billHistory, followButton;
         private ImageView politicianProfilePicture;
         private TextView politicianName, politicianRole;
+        private RelativeLayout politicianCard;
 
         public MyViewHolder(final View itemView) {
             super(itemView);
 
-            billHistory = (Button) itemView.findViewById(org.tallythevote.R.id.billHistoryButton);
-            followButton = (Button) itemView.findViewById(org.tallythevote.R.id.followButton);
             politicianProfilePicture = (ImageView) itemView.findViewById(org.tallythevote.R.id.politicianImage);
-            politicianName = (TextView) itemView.findViewById(org.tallythevote.R.id.politicianName);
+            politicianName = (TextView) itemView.findViewById(org.tallythevote.R.id.smallDescription);
             politicianRole = (TextView) itemView.findViewById(org.tallythevote.R.id.politicianPosition);
-
-            followButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(followButton.getText().toString() == "Follow")
-                        followButton.setText(org.tallythevote.R.string.unfollow_politician);
-                    else
-                        followButton.setText("Follow");
-                }
-            });
-
+            politicianCard = (RelativeLayout) itemView.findViewById(R.id.politicianCard);
         }
 
         public TextView getCurrentPoliticianName() {

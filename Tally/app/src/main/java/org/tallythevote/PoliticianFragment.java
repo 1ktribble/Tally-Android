@@ -22,7 +22,6 @@ public class PoliticianFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         getData();
     }
 
@@ -81,7 +80,7 @@ public class PoliticianFragment extends Fragment {
                     .findFirstCompletelyVisibleItemPosition();
         }
 
-        mLayoutManager = new GridLayoutManager(getActivity(), 2);
+//        mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.scrollToPosition(scrollPosition);
     }

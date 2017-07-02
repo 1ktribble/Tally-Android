@@ -3,11 +3,11 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
-        applicationId "com.wordpress.kaitribble.unnamedvotingapplication"
-        minSdkVersion 21
+        applicationId "org.tallythevote"
+        minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -27,15 +27,21 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.google.android.gms:play-services-maps:10.2.1'
     compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.google.firebase:firebase-auth:10.2.1'
+    compile 'com.firebaseui:firebase-ui-auth:1.2.0'
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support.constraint:constraint-layout:+'
+
+
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
+
 repositories {
     mavenCentral()
 }

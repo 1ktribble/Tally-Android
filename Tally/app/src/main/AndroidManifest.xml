@@ -5,7 +5,7 @@
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -22,19 +22,31 @@
         </activity>
         <activity
             android:name=".PoliticianActivity"
-            android:parentActivityName=".MainActivity">
+            android:label="@string/settings_menu_profile"
+            android:parentActivityName=".MainActivity"
+            android:permission=""
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.tallythevote.MainActivity"/>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD_xqF3pc50k5gzSuJJass7dOSUkDNxPQA"/>
+
         <activity
             android:name=".ProfileActivity"
-            android:label="@string/settings_menu_profile"
+            android:label="@string/title_activity_profile"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.tallythevote.MainActivity"/>
+
+        </activity>
+        <activity android:name=".SignInActivity">
+
         </activity>
     </application>
 

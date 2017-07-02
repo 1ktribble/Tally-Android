@@ -21,11 +21,11 @@ import java.util.List;
 /**
  * Created by Kai on 4/24/2017.
  */
-public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.MyViewHolder>{
+public class EventFragmentAdapter extends RecyclerView.Adapter<EventFragmentAdapter.MyViewHolder>{
 
     List<Event> listOfEvents = Collections.emptyList();
 
-    public EventItemAdapter(List<Event> data){
+    public EventFragmentAdapter(List<Event> data){
         this.listOfEvents = data;
     }
 
@@ -37,7 +37,7 @@ public class EventItemAdapter extends RecyclerView.Adapter<EventItemAdapter.MyVi
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(org.tallythevote.R.layout.event_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(org.tallythevote.R.layout.event_view, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(view);
         return viewHolder;
     }

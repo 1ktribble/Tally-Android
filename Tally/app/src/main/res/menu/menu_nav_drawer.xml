@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="org.tallythevote.PoliticianActivity">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_politicians"
+            android:icon="@drawable/ic_home_white_24dp"
+            android:title="@string/home_bottom_nav"/>
+
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_date_range_white_24dp"
+            android:title="@string/calendar_bottom_nav"
+            />
+
+        <item
+            android:id="@+id/nav_feed"
+            android:icon="@drawable/ic_timeline_white_24px"
+            android:title="@string/feed_bottom_nav"/>
+
+        <item
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/ic_explore_white_24dp"
+            android:title="@string/explore_bottom_nav"/>
+    </group>
+
+    <group>
+        <menu>
+            <item android:id="@+id/nav_profile"
+                  android:title="@string/settings_menu_profile"
+                  android:icon="@drawable/ic_account_box_white_24px"/>
+
+            <item android:id="@+id/nav_settings"
+                  android:title="@string/action_settings"
+                  android:icon="@drawable/ic_settings_white_24dp"/>
+
+        </menu>
+
+
+    </group>
+
+
+</menu>

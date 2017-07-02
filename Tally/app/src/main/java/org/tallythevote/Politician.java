@@ -4,25 +4,34 @@ package org.tallythevote;
  * Created by Kai on 4/24/2017.
  */
 public class Politician {
-    private int politicianId, politicianImage;
+    private int politicianId;
+    private int politicianImage;
+
+    private int politicianFollowers;
+
+    private int politicianResponseRate;
     private String politicianName, politicianPosition, politicianDescription, politicianRegion, politicianEmail,
             politicianPhone;
     private boolean followMe;
+
+    public int getPoliticianFollowers() {
+        return politicianFollowers;
+    }
+
+    public int getPoliticianResponseRate() {
+        return politicianResponseRate;
+    }
+
+    public void setPoliticianResponseRate(float numResponses, float numTimesContacted) {
+        this.politicianResponseRate = Integer.valueOf(String.format(" %.0f",numResponses/numTimesContacted));
+    }
 
     public String getPoliticianPhone() {
         return politicianPhone;
     }
 
-    public void setPoliticianPhone(String politicianPhone) {
-        this.politicianPhone = politicianPhone;
-    }
-
     public String getPoliticianEmail() {
         return politicianEmail;
-    }
-
-    public void setPoliticianEmail(String politicianEmail) {
-        this.politicianEmail = politicianEmail;
     }
 
     Politician(int politicianId, String politicianName, String politicianPosition, String politicianRegion,

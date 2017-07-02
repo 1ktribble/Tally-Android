@@ -2,64 +2,114 @@ package org.tallythevote;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PoliticianActivity extends AppCompatActivity {
+public class PoliticianActivity extends AppCompatActivity{
+
+    Toolbar toolbar;
+    TextView followerCount, responseRate, positionView;
+    RelativeLayout smallDescriptionView, phoneNumberView, emailView;
+
+    int followerCountTally;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(org.tallythevote.R.layout.activity_politician);
+        setContentView(R.layout.activity_politician);
 
         Bundle extras = getIntent().getExtras();
         String name = "", phone = "", email = "", description = "", position = "";
-        int image = org.tallythevote.R.drawable.ic_email_black_24dp;
         if(extras != null){
             name = extras.getString("NAME");
             phone = extras.getString("PHONE");
             email = extras.getString("EMAIL");
             position = extras.getString("POSITION");
             description = extras.getString("DESCRIPTION");
-            image = extras.getInt("IMAGE");
         }
-
-        loadResources(name, phone, email, position, description, image);
+        loadResources(phone, email, position, description);
+        setupFAB(name);
+        setupToolbar(name);
+        setupCollapsingToolbar();
     }
 
-    private void loadResources(String name, String phone, final String email, String position,
-                               String description, int image) {
-        TextView positionView, nameView, descriptionView;
-        ImageButton emailView, phoneView;
-        ImageView imageView;
+    private void setupFAB(final String name) {
+        followerCountTally = followerCount.toString().charAt(0);
+        final StringBuilder sb = new StringBuilder();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.followUser);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                followerCountTally = 0;
+                followerCountTally++;
+                sb.append(followerCountTally);
+                sb.append("\nFollowers");
+                followerCount.setText(sb.toString());
+                sb.delete(0, sb.toString().indexOf('s') + 1);
+                Snackbar.make(view, "Now Following " + name, Snackbar.LENGTH_LONG)
+                        .setAction("Undo", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                followerCountTally--;
+                                sb.append(followerCountTally);
+                                sb.append("\nFollowers");
+                                followerCount.setText(sb.toString());
+                                sb.delete(0, sb.toString().indexOf('s') + 1);
+                            }
+                        }).show();
+            }
+        });
+    }
 
-        final String phoneNumber = phone;
+    private void setupToolbar(String name) {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
-        positionView = (TextView) findViewById(org.tallythevote.R.id.politicianPositionText);
+    private void setupCollapsingToolbar(){
+        final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout)
+                findViewById(R.id.toolbar_layout);
+
+        collapsingToolbarLayout.setTitleEnabled(false);
+    }
+
+    private void loadResources(final String phone, final String email, String position, String description){
+
+        //ImageView imageView;
+
+        positionView = (TextView) findViewById(R.id.smallDescription);
+        followerCount = (TextView) findViewById(R.id.followerCount);
+        responseRate = (TextView) findViewById(R.id.responseRate);
         positionView.setText(position);
-        nameView = (TextView) findViewById(org.tallythevote.R.id.politicianName);
-        nameView.setText(name);
-        descriptionView = (TextView) findViewById(org.tallythevote.R.id.politicianDescription);
-        descriptionView.setText(description);
 
-        imageView = (ImageView) findViewById(org.tallythevote.R.id.politicianImage);
-        imageView.setImageResource(image);
+        smallDescriptionView = (RelativeLayout) findViewById(R.id.smallDescriptionRL);
+        phoneNumberView = (RelativeLayout) findViewById(R.id.phoneNumberRL);
+        emailView = (RelativeLayout) findViewById(R.id.emailRL);
 
-        phoneView = (ImageButton) findViewById(org.tallythevote.R.id.callButton);
-        phoneView.setOnClickListener(new View.OnClickListener() {
+        smallDescriptionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        phoneNumberView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:"+ phoneNumber));
+                intent.setData(Uri.parse("tel:"+ phone));
                 v.getContext().startActivity(intent);
             }
         });
-        emailView = (ImageButton) findViewById(org.tallythevote.R.id.emailButton);
         emailView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +126,5 @@ public class PoliticianActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
