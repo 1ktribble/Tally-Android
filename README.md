@@ -1,5 +1,5 @@
 # Tally
-Tally Android App - "Insert catching Slogan Here"
+Tally Android App
 
 Tally is a natively Android app that allows users to follow not just any politician, but the politicians that directly affect THEIR county,
 prescinct, state, ect. automatically. It contains a list of these politicians, the upcoming political events that are happening in their 
